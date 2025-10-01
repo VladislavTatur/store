@@ -1,75 +1,88 @@
-# React + TypeScript + Vite
+# Store App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **store application** built with **React**, **Vite**, **TypeScript**, and **TailwindCSS**, featuring product listings, shared UI components, and client-side state management.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[https://VladislavTatur.github.io/store](https://VladislavTatur.github.io/store)
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Features
 
-Note: This will impact Vite dev & build performances.
+- **Product catalog** with reusable components.
+- **Navigation and routing** with React Router v7.
+- **Shared UI library** with buttons, inputs, modals, and product cards.
+- **State stored in localStorage** – all products, cart, and user data are saved directly in the browser without any backend API.
+- **Deployment** via GitHub Pages.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```bash
+git clone https://github.com/VladislavTatur/store.git
+cd store
+pnpm install
+pnpm dev
+```
+The app will run on http://localhost:5173
+by default.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Tech Stack
+
+- React 19 – frontend library
+- TypeScript 5 – static typing
+- React Router 7 – routing
+- TailwindCSS 4 – styling
+- Vite 7 – build tool
+
+### Linting & Formatting
+
+- ESLint with TypeScript, React, JSX accessibility plugins.
+- Prettier for consistent code formatting.
+- Husky & lint-staged for pre-commit hooks:
+```
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
+```
+> Code is automatically formatted and linted before commit.
+
+### Project Structure
+
+```
+src/
+├─ hooks/            # Custom hooks
+├─ pages/            # App pages (Home, Products, etc.)
+├─ shared/           # Shared assets, components, constants, utils
+│  ├─ assets/        # Icons, images
+│  ├─ components/    # Reusable UI components
+│  ├─ constants/     # App constants (links, common values)
+│  ├─ utils/         # Helper functions
+├─ App.tsx           # Main app
+├─ main.tsx          # Entry point
+└─ index.css         # Global styles
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Deployment
+The app is deployed to GitHub Pages:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+pnpm build
+pnpm deploy
+
+```
+
+### Notes
+
+- All data is stored in localStorage, no backend API is used.
+- This project was built without design mockups and without responsive layout requirements.
+- Clearing localStorage will reset products and the shopping cart.

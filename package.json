@@ -2,9 +2,10 @@
   "name": "store",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://VladislavTatur.github.io/store",
   "type": "module",
   "scripts": {
-    "predeploy": "yarn build",
+    "predeploy": "pnpm build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc -b && vite build",
