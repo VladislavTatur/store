@@ -4,7 +4,7 @@ export const dataProducts: dataProductsType[] = [
   {
     id: 1,
     photo: 'https://avatarko.ru/img/kartinka/1/Crazy_Frog.jpg',
-    name: 'Моторное масло dfd sf ds f dsf sdf asdf asd f sde d sf dsМоторное масло dfd sf ds f dsf sdf asdf asd f sde d sf dsМоторное масло dfd sf ds f dsf sdf asdf asd f sde d sf dsМоторное масло dfd sf ds f dsf sdf asdf asd f sde d sf ds',
+    name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales pulvinar odio at volutpat. Nulla elit orci, suscipit a tortor.',
     price: 89.8,
     currency: 'BYN',
     currencyExchangeRate: 3,
