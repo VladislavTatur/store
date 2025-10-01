@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import { Liked } from './pages/Liked.tsx';
 import { ShopHome } from './pages/ShopHome.tsx';
@@ -8,7 +8,7 @@ import { ROUTES } from './shared/constants/links.ts';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <div className="block lg:hidden px-4 pt-3">
         <Input placeholder="Введите код или название товара" />
@@ -17,7 +17,7 @@ function App() {
         <Route path={ROUTES.main} element={<ShopHome />} />
         <Route path={ROUTES.liked} element={<Liked />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
